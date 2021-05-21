@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Analytics Page</title>
+        <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <link rel="stylesheet" href="ndex.css">
+    </head>
+    <body>
+        <div class="nav">
+            
+            <ul>
+                <li><a class="dropdown" href="#"><img id="dropDown" src="dropDown.svg"></a>
+                    <ul>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </li>
+                
+                <li><a  class="homePage" href="#"><img id="HomePage" src="HomePage.svg"></a>
+                    <ul>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </li>
+                 <li id="username">aadesoye</p></li>
+            </ul>
+            <button class="Refresh Button">Refresh Status</button>
+        </div>
+        <div class="side bar">
+            <div class="side-bar-content">
+                <a href="#"></a><img class="siebel" src="Siebel.svg"></a><br>
+                <a href="#"></a><img class="barchat" src="bar-chart.svg"></a><br>
+                <a href="#"></a><img class="analytics" src="Analytics.svg"></a><br>
+                <a href="#"></a><img class="flag" src="Flag.svg"></a><br>
+
+            </div>
+            <div class="container">
+                <div class="container-analytics">
+                    <img class="side-analytics" src="Analytics.svg">      
+                    
+                    <div class="content">
+                        <h2>Analytics</h2><br>
+                        <p class="report-story">This report provides the systematic computational analysis of the data or statistics from Rafiki front end</p><br>
+                        <p class="read-more">Read more</p><br>
+                        <br>
+                        <p class="filter-range"><b>Filter Range:</b></p> 
+                    </div>
+                    <div class="button">
+                        <b><input type="button" value="Export to CSV"></b>
+                    </div>       
+
+                </div>
+                
+                <div class="last-container">
+                    <p class="Filter">Filter</p><br>
+                    <div class="vertical-line"></div>
+                    <input type="datetime-local" data-dependent-validation='{"from": "date-to", "prop": "max"}' type="date" id="date-from" placeholder="from">
+                    <input type="datetime-local" data-dependent-validation='{"from": "date-from", "prop": "min"}' type="date" id="date-to" placeholder="to">
+                    <button class="Reset">Reset</button>
+                    <button class="Filter">Filter</button>
+                </div>
+                <div class="dashboard">
+                    <div class="Total-chat">
+                        <h5 class="total-chat-content">Total Chat</h5>
+                        <p></p>
+                    </div>
+                    <div class="Total-resolved">
+                        <h5 class="total-chat-resolved">Total Resolved</h5>
+                        <p></p>
+                    </div>
+                    <div class="Total-active">
+                        <h5 class="total-chat-active">Total Active</h5>
+                        <p></p>
+                    </div>
+                    <div class="Total-abandoned">
+                        <h5 class="total-chat-abandoned">Total Abandoned</h5>
+                        <p></p>
+                    </div>
+                    <div class="average-message-per-chat">
+                        <h7 class="average-message-content">Average Message Per Chat</h7>
+                        <p></p>
+                    </div>
+                    <div class="peak-chat">
+                        <h7 class="peak-chat-per-period">Peak Chat Per Period</h7>
+                        <p></p>
+                    </div>
+                    <div class="weak-understanding">
+                        <h7 class="content-weak-understanding">Weak Understanding</h7>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="container-2">
+                    <div class="container-2-header">
+                        <h4 class="h4container-2">Customer Engagement Trend</h4>
+                        <h5 class="cont">Total Data:</h5>
+                    </div>
+                    <div class="line-Chart">
+                        <canvas id="myChart1" style="display: block;width: 800px;height: 200px; font-weight: bold;" width="900" height="250" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+                <div class="container-3">
+                    <div class="container-3-header">
+                        <h4 class="h4container-3">Most Hit Intents</h4>
+                    </div>
+                    <div class="barchar">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+
+                </div>
+                <div class="container-5">
+                    <div class="intents-container-5">
+                        <div class="intent">
+                            <h5>Top Intent</h5>
+                        </div>
+                        <div class="intent-content">
+                            <h6 class="h6intent-container-5">Intent</h6>
+                            <h6 class="intent6">Total:</h6>
+
+                        </div>
+
+                        
+                    </div>
+                    <div class="Entities-container-5">
+                        <div class="entities">
+                            <h5>Top Entities</h5>
+                        </div>
+                        <div class="entitie-content">
+                            <h6 class="entities-h6container-5">Entities</h6>
+                            <h6 class="entities6">Total:</h6>
+
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    </div>
+                    <div class="container-6">
+                        <div class="first-layer">
+                            <h5 class="h4container-6">Intents</h5>
+                            <h5 class="s1">Utterances (Actual)</h5>
+                            <h5 class="s2">Utterances (Expected)</h5>
+                            <h5 class="s3">True Positive</h5>
+                            <h5 class="s4">False Positives</h5>
+                            <h5 class="s5">Precision</h5>
+                            <h5 class="s6">True Positive</h5>
+                            <h5 class="s7">Confidence Level</h5>
+
+                        </div>
+                        <div class="line">
+
+                        </div>
+                        <div class="number-button">
+                            <input type="number">
+                            <p>Showing 0 to 0 Result</p>
+                        </div>
+
+                        
+    
+                   </div>
+                   <div class="container-7">
+                       <div class="first-container">
+                            <div class="resolved-botresolved">
+                                <canvas id="myChart4"></canvas>
+                            </div>
+                        </div>
+                        <div class="second-container">
+                            <div class="unassigned-assigned">
+                                <canvas id="myChart5"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                
+
+
+            </div>
+                            
+            </div>
+        </div>
+        <script src="script.js"></script>
+        
+        
+
+
+    </body>
+</html>
